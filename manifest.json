@@ -1,0 +1,29 @@
+{
+	"name": "QA Extension",
+	"version": "0.6.1",
+	"manifest_version": 2,
+	"description": "This extension provides the most common tools and bookmarks we usually uses in QA",
+	"icons": { "16": "icon16.ico",
+          		"32": "icon32.ico", 
+           		"48": "icon48.ico",
+          		"128": "icon128.ico" 
+    },
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+	"browser_action": {
+		"default_icon": { "16": "icon16.ico",
+          				  "32": "icon32.ico", 
+           				  "48": "icon48.ico" 
+        },
+		"default_popup": "menu.html"
+	},
+	"content_scripts": [
+    {
+      "matches": ["http://*.llbean.com/*"],
+      "js": ["jstools.js"]
+    }    
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"author": "Yohan Desanti G."
+}
